@@ -44,4 +44,14 @@ var getJSONData = function(url){
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
 document.addEventListener("DOMContentLoaded", function(e){
+  let userLogged = sessionStorage.getItem("userLogin");
+  let user = document.getElementById("user");
+
+  user.innerHTML = userLogged + `<img src="img/—Pngtree—vector logout icon_4272675.png" width="30" height="30">`;
+
+  document.getElementById("user").addEventListener("click", function(e){
+    sessionStorage.removeItem("userLogin");
+    window.location.replace("login.html");
+  });
+  
 });
