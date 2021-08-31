@@ -37,7 +37,7 @@
         <!-- Se selecciona el criterio de filtrado -->
         <div class="btn-group btn-group-toggle mb-4" data-toggle="buttons">
           <label class="btn btn-light active" id="sortAsc">
-            <input type="radio" name="options" autocomplete="off" checked="">Menor precio
+            <input type="radio" name="options" autocomplete="off">Menor precio
           </label>
           <label class="btn btn-light" id="sortDesc">
             <input type="radio" name="options" autocomplete="off">Mayor precio
@@ -50,7 +50,18 @@
       </div>
     </div>
     <div class="row justify-content-end">
-      <div class="col-md-6"></div>
+      <div class="col-md-6">
+        <div class="input-group">
+          <div class="form-outline">
+            <input type="search" id="form1" class="form-control" placeholder="Buscar producto"/>
+          </div>
+          <div class="col-1 p-0">
+          <button type="button" class="btn btn-light btn-block">
+            <i class="fas fa-search"></i>
+          </button>
+        </div>
+        </div>
+      </div>
       <div class="col-md-6 col-sm-12 mb-1 container">
         <div class="row container p-0 m-0">
           <div class="col">
