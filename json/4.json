@@ -1,0 +1,14 @@
+{
+    "name": "Peugeot 208",
+    "description": "El Peugeot 208 es un vehículo utilitario generalista, del segmento B, fabricado por Peugeot desde 2012, como relevo del Peugeot 207. Actualmente se comercializa la segunda generación, presentada en 2019. El Peugeot 208 se caracteriza por ser un modelo de nuevo desarrollo respecto a su antecesor.",
+    "cost": 15200,
+    "currency": "USD",
+    "soldCount": 17,
+    "category": "Autos",
+    "images": [
+        "img/prod4.jpg",
+        "img/prod4_1.jpg",
+        "img/prod4_2.jpg",
+        "img/prod4_3.jpg"
+    ]
+}

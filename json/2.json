@@ -1,0 +1,14 @@
+{
+    "name": "Fiat Way",
+    "description": "Sus líneas rectas, ángulos redondeados y faros con máscara negra, muestran un equilibrio perfecto entre belleza y funcionalidad.",
+    "cost": 14500,
+    "currency": "USD",
+    "soldCount": 52,
+    "category": "Autos",
+    "images": [
+        "img/prod2.jpg",
+        "img/prod2_1.jpg",
+        "img/prod2_2.jpg",
+        "img/prod2_3.jpg"
+    ]
+}
