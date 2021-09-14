@@ -1,3 +1,13 @@
+
+.rating_star{
+  cursor: pointer;
+  color: #dabd18b2;
+}
+
+.rating {
+  width: 180px;
+}
+
 .jumbotron, .card-body, .container, .site-header{
     font-family: 'Raleway', serif !important;
 }
@@ -137,5 +147,5 @@ a.custom-card:hover {
 }
 
 .checked {
-  color: orange;
+  color: #dabd18b2;
 }

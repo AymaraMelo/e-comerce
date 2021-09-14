@@ -29,6 +29,20 @@ function showInfoProduct(){
 }
 
 
+function setStars(cant){
+    let result ="";
+
+    for(let i=0; i<5; i++){
+        if(i<cant){
+            result += `<i class="rating_star fa fa-star "></i>`
+        } else {
+            result += `<i class="rating_star far fa-star"></i>`
+        }
+    }
+
+    return result;
+}
+
 function showComments(){
     let content = "";
     let element = document.getElementById("cat-list-container");
@@ -37,17 +51,17 @@ function showComments(){
         let comment = dataComment[i];
 
         content += `
-            <div class="list-group-item list-group-item-action">
+            <div class="list-group-item">
                 <div class="row">
-                <div class="col-3">
-                    <img src="" alt="" class="img-thumbnail">
+                <div class="col-2">
+                    <div class="rating"> `+ setStars(comment.score) + ` </div>
                 </div>
                 <div class="col">
                     <div class="d-flex w-100 justify-content-between">
-                    <h5 class="mb-1">Persona</h5>
-                    <small class="text-muted">Soy una fecha</small>
+                    <h5 class="mb-1">`+ comment.user +`</h5>
+                    <small class="text-muted">`+ comment.dateTime +`</small>
                     </div>
-                    <p class="mb-1">Soy una descripcion</p>
+                    <p class="mb-1">`+ comment.description +`</p>
                 </div>
                 </div>
             </div>`
