@@ -8,6 +8,11 @@ var maxCount = undefined;
 var buscar = undefined;
 
 
+//Guardo el producto seleccionado
+function setProduct(id){
+    localStorage.setItem("productId", JSON.stringify({productId: id}));
+}
+
 //Muestra los productos
 function showProducts() {
     var products_array = currentProductsArray;
@@ -29,13 +34,15 @@ function showProducts() {
                 cargar_html += `
                     <div class="col-md-4">
                         <div class="card mb-4 shadow-sm custom-card">
-                            <img class="bd-placeholder-img card-img-top"  src="` + product.imgSrc + `">
-                            <h3 class="m-3">` + product.name + `</h3>
-                            <div class="card-body">
-                                <p class="card-text"> ` + product.description + `</p>
-                                <p class="card-text"> ` + "Cantidad vendidos " + product.soldCount + `</p>
-                                <p class="card-text"> ` + product.currency + " " + product.cost + `</p>
-                            </div>
+                            <a href="product-info.html" class=" list-group-item-action" onclick="setProduct(`+  (i+1) +`)">
+                                <img class="bd-placeholder-img card-img-top"  src="` + product.imgSrc + `">
+                                <h3 class="m-3">` + product.name + `</h3>
+                                <div class="card-body">
+                                    <p class="card-text"> ` + product.description + `</p>
+                                    <p class="card-text"> ` + "Cantidad vendidos " + product.soldCount + `</p>
+                                    <p class="card-text"> ` + product.currency + " " + product.cost + `</p>
+                                </div>
+                            </a>
                         </div>
                     </div> `
             }

@@ -7,7 +7,8 @@ const PRODUCT_INFO_COMMENTS_URL = "https://japdevdep.github.io/ecommerce-api/pro
 const CART_INFO_URL = "https://japdevdep.github.io/ecommerce-api/cart/987.json";
 const CART_BUY_URL = "https://japdevdep.github.io/ecommerce-api/cart/buy.json";
 
-const INFO_BYPRODUCT = "";//Entrega 3
+const INFO_BYPRODUCT = "https://aymaramelo.github.io/e-comerce/json/"; //Entrega 3
+const INFO_COMMENTS = "https://aymaramelo.github.io/e-comerce/json/"; //Entrega 3
 
 var showSpinner = function(){
   document.getElementById("spinner-wrapper").style.display = "block";
