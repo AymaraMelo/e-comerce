@@ -4,6 +4,7 @@
 
 var dataProduct="";
 var dataComment="";
+var value = 0;
 
 function showInfoProduct(){
     document.getElementById("productName").innerHTML = dataProduct.name;
@@ -28,6 +29,34 @@ function showInfoProduct(){
     img.innerHTML = content;
 }
 
+
+function getDataComment(){
+    let user = sessionStorage.getItem("userLogin");
+    let date = new Date();
+    let content = "";
+    
+    content += `
+    <div class="list-group-item">
+        <div class="row">
+        <div class="col-2">
+            <div class="rating"> `+ setStars(value) + ` </div>
+        </div>
+        <div class="col">
+            <div class="d-flex w-100 justify-content-between">
+            <h5 class="mb-1">`+ user +`</h5>
+            <small class="text-muted">`+ date +`</small>
+            </div>
+            <p class="mb-1">`+ document.getElementById("comment").value +`</p>
+        </div>
+        </div>
+    </div>`
+
+    document.getElementById("cat-list-container").innerHTML += content;
+}
+
+function setValue(v){
+    value=v;
+}
 
 function setStars(cant){
     let result ="";

@@ -63,9 +63,98 @@
     <div>
       <h4>Comentarios</h4>
       <div id="cat-list-container">
-
       </div>
     </div>
+    <br>
+    <br>
+    <!-- Lugar para que se puedan dejar comentarios -->
+    <div class="list-group-item">
+      <div class="row">
+        <div class="col-2">
+          <div class="puntuacion ">
+            <p>Califica el producto : </p>
+            <input id="radio1" type="radio" name="estrellas" value="5" onclick="setValue(5)">
+            <label for="radio1">★</label>
+            <input id="radio2" type="radio" name="estrellas" value="4" onclick="setValue(4)">
+            <label for="radio2">★</label>
+            <input id="radio3" type="radio" name="estrellas" value="3" onclick="setValue(3)">
+            <label for="radio3">★</label>
+            <input id="radio4" type="radio" name="estrellas" value="2" onclick="setValue(2)">
+            <label for="radio4">★</label>
+            <input id="radio5" type="radio" name="estrellas" value="1" onclick="setValue(1)">
+            <label for="radio5">★</label>
+          </div>
+        </div>
+        <div class="col">
+          <textarea placeholder="Deja tu comentario!" rows="4" cols="100" id="comment"></textarea>
+        </div>
+      </div>
+    </div>
+    <button class="btn btn-comment" onclick="getDataComment()">Enviar comentario</button>
+
+    <script>
+      function getDataComment() {
+        let user = sessionStorage.getItem("userLogin");
+        let date = new Date();
+        let content = "";
+
+        content += `
+    <div class="list-group-item">
+        <div class="row">
+        <div class="col-2">
+            <div class="rating"> `+ setStars(value) + ` </div>
+        </div>
+        <div class="col">
+            <div class="d-flex w-100 justify-content-between">
+            <h5 class="mb-1">`+ user + `</h5>
+            <small class="text-muted">`+ date + `</small>
+            </div>
+            <p class="mb-1">`+ document.getElementById("comment").value + `</p>
+        </div>
+        </div>
+    </div>`
+
+        document.getElementById("cat-list-container").innerHTML += content;
+      }
+    </script>
+    <!-- <form>
+      <hr class="line">
+      <h6>Deja un comentario: </h6>
+      <textarea placeholder="Escribe aquí!" rows="4" cols="100"></textarea>
+      <div class="puntuacion ">
+        <p>Califica el producto : </p>
+          <input id="radio1" type="radio" name="estrellas" value="5" onclick="document.getElementById('valor').innerHTML='5'">
+          <label for="radio1">★</label>
+          <input id="radio2" type="radio" name="estrellas" value="4" onclick="document.getElementById('valor').innerHTML='4'">
+          <label for="radio2">★</label>
+          <input id="radio3" type="radio" name="estrellas" value="3" onclick="document.getElementById('valor').innerHTML='3'">
+          <label for="radio3">★</label>
+          <input id="radio4" type="radio" name="estrellas" value="2" onclick="document.getElementById('valor').innerHTML='2'">
+          <label for="radio4">★</label>
+          <input id="radio5" type="radio" name="estrellas" value="1" onclick="document.getElementById('valor').innerHTML='1'">
+          <label for="radio5">★</label>
+          <br>
+        
+      </div>
+      <div class="rating_user">
+        <p>Califica el producto : </p>
+        <input type="radio" name="rate" id="rate-5">
+        <label for="rate-5" class='fas fa-star'>
+        <input type="radio" name="rate" id="rate-4">
+        <label for="rate-4" class='fas fa-star'>
+        <input type="radio" name="rate" id="rate-3">
+        <label for="rate-3" class='fas fa-star'>
+        <input type="radio" name="rate" id="rate-2">
+        <label for="rate-2" class='fas fa-star'>
+        <input type="radio" name="rate" id="rate-1">
+        <label for="rate-1" class='fas fa-star'>
+
+      </div>
+      <br>
+      <button class="btn btn-comment" type="submit">Enviar comentario</button>
+      <hr class="line">
+    </form> -->
+
 
   </div>
   <footer class="text-muted">

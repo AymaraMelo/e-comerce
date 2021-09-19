@@ -1,6 +1,45 @@
 
+
+.puntuacion input {
+  position: absolute;
+  top: -100px;
+  display: none;
+}
+
+input[type="radio" i] {
+  background-color: initial;
+  cursor: default;
+  appearance: auto;
+  box-sizing: border-box;
+  margin: 3px 3px 0px 5px;
+  padding: initial;
+  border: initial;
+}
+
+.puntuacion label:hover, .puntuacion label:hover ~ label, .puntuacion input:checked ~ label {
+  color: #dabd18b2;
+}
+
+.puntuacion label {
+  float: right;
+  color: #c1b8b8;
+  font-size: 30px;
+}
+
+label {
+  cursor: default;
+}
+
+.line{
+  border-color: rgb(90, 90, 90);
+}
+
+.btn-comment{
+  background-color: rgb(180, 180, 180);
+  align-self: flex-end;
+}
+
 .rating_star{
-  cursor: pointer;
   color: #dabd18b2;
 }
 
