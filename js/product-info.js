@@ -29,30 +29,29 @@ function showInfoProduct(){
     img.innerHTML = content;
 
     let related = document.getElementById("related-products");
-    let cargar_html = "";
-
-    for(let j=0; i<dataProduct.relatedProducts.length; i++){
-        let product = dataProduct.relatedProducts[i];
-        let url_product = INFO_BYPRODUCT + product + '.json';    
+    
+    for(let j=0; j<dataProduct.relatedProducts.length; j++){
+        let product = dataProduct.relatedProducts[j];
+        let url_product = INFO_BYPRODUCT + product + '.json';   
+        let cargar_html = ""; 
 
         getJSONData(url_product).then(function (resultObj) {
             if (resultObj.status === "ok") {
                 
                 productRelated = resultObj.data;
-                
+
                 cargar_html += `
                     <div class="col-md-4">
                         <div class="card mb-4 shadow-sm custom-card">
-                            <a href="product-info.html" class=" list-group-item-action" onclick="setProduct(`+  (i+1) +`)">
-                                <img class="bd-placeholder-img card-img-top"  src="` + productRelated.imgSrc + `">
+                                <img class="bd-placeholder-img card-img-top"  src="` + productRelated.images[0] + `">
                                 <h3 class="m-3">` + productRelated.name + `</h3>
-                            </a>
                         </div>
                     </div> `
+                
+                related.innerHTML += cargar_html;
             }
         });
     }
-    related.innerHTML = cargar_html;
 }
 
 
