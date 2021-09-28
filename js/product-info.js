@@ -6,6 +6,11 @@ var dataProduct="";
 var dataComment="";
 var value = 0;
 
+//Guardo el producto seleccionado
+function setProduct(id){
+    localStorage.setItem("productId", JSON.stringify({productId: id}));
+}
+
 function showInfoProduct(){
     document.getElementById("productName").innerHTML = dataProduct.name;
     document.getElementById("productDescription").innerHTML = dataProduct.description;
@@ -43,8 +48,10 @@ function showInfoProduct(){
                 cargar_html += `
                     <div class="col-md-4">
                         <div class="card mb-4 shadow-sm custom-card">
+                            <a href="product-info.html" class=" list-group-item-action" onclick="setProduct(`+  (product) +`)">
                                 <img class="bd-placeholder-img card-img-top"  src="` + productRelated.images[0] + `">
                                 <h3 class="m-3">` + productRelated.name + `</h3>
+                            </a>
                         </div>
                     </div> `
                 
