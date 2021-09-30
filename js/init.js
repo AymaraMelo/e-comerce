@@ -50,11 +50,10 @@ document.addEventListener("DOMContentLoaded", function(e){
   let userLogged = sessionStorage.getItem("userLogin");
   let user = document.getElementById("user");
 
-  user.innerHTML = userLogged + `<img src="img/—Pngtree—vector logout icon_4272675.png" width="30" height="30">`;
+  user.innerHTML = userLogged;
 
-  document.getElementById("user").addEventListener("click", function(e){
+  document.getElementById("logout").addEventListener("click", function(e){
     sessionStorage.removeItem("userLogin");
-    window.location.replace("login.html");
   });
   
 });

@@ -23,13 +23,17 @@ function showInfoProduct(){
 
     for(let i=0; i<dataProduct.images.length; i++){
 
-        content += `
-            <div class="col-lg-3 col-md-4 col-6">
-                <div class="d-block mb-4 h-100">
-                    <img class="img-fluid img-thumbnail" src="`+dataProduct.images[i]+`" alt="">
-                </div>
-            </div>`
-
+        if(i==0){
+            content += `
+                <div class="carousel-item active">
+                    <img src="`+dataProduct.images[i]+`" class="d-block w-100" alt="">
+                </div>`
+        }else{
+            content += `
+                    <div class="carousel-item">
+                        <img src="`+dataProduct.images[i]+`" class="d-block w-100" alt="">
+                    </div>`
+        }
     }
     img.innerHTML = content;
 

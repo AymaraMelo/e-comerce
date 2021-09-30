@@ -22,7 +22,17 @@
       <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
       <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
       <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
-      <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
+      <div class="dropdown">
+        <a class="py-2 d-none d-md-inline-block dropdown-toggle" href="#" role="button" id="user" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          <!--Acá se carga el usuario-->
+        </a>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+          <a class="dropdown-item" href="#">Mi perfil</a>
+          <a class="dropdown-item" href="cart.html">Mi carrito</a>
+          <a class="dropdown-item" id="logout" href="login.html">Cerrar Sesión</a>
+        </div>
+      </div>
     </div>
   </nav>
   <div class="container mt-5">
@@ -49,16 +59,24 @@
       </dl>
       <!-- Termina listado de información -->
     </div>
-    <br>
-
     <!-- Listado de imagenes -->
-    <hr class="my-3">
-    <br>
-    <div class="row justify-content-between" id="productImagesGallery">
+    <div class="d-flex justify-content-center">
+    <div id="carouselExampleControls" class="carousel slide m-5 w-50 p-3" data-ride="carousel">
+      <div class="carousel-inner" id="productImagesGallery">
+        <!-- Aca van las imágenes -->
+      </div>
+      <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Anterior</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Siguiente</span>
+      </a>
     </div>
-    <br>
+    </div>
     <!-- Termina imagenes -->
-
+    
     <!-- COMENTARIOS -->
     <div>
       <h4>Comentarios</h4>
